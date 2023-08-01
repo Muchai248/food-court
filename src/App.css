@@ -24,27 +24,46 @@
 }
 
 .homename{
+  font-size:70px;
   background-color: aqua;
   position: absolute;
-  left:50%;
+  left:46%;
   top:20px;
 }
 
 .circle{
   display: flex;
   justify-content: space-between;
-  width: 45px;
+  width: 170px;
   position: absolute;
   bottom: 50px;
-  left: 50%;
+  left: 46%;
 }
 
 .homedescription{
-  width: 20%;
-  height: 10%;
+  font-size: 25px;
+  width: 30%;
+  height:fit-content;
   background-color: azure;
   position: absolute;
   bottom: 200px;
   right: 120px;
 
+}
+
+.restimage{
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  background-color: antiquewhite;
+  position: absolute;
+  left: 40vw;
+  top: 20vh;
+}
+
+.indicator{
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius:50%;
 }

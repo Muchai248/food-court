@@ -7,7 +7,7 @@ export default function LandingPage({restaurant, setRestaurant, currentindex,  s
 
 
 function handleLeft(){
-    console.log(currentindex)
+    console.log(restaurant)
     if(currentindex>0){
      setCurrentIndex(currentindex-1)
     }
@@ -15,7 +15,7 @@ function handleLeft(){
 }
 
 function handleRight(){
-    if(currentindex<current.length){
+    if(currentindex<restaurant.length){
      setCurrentIndex(currentindex+1)
     }
     console.log(currentindex)
@@ -29,7 +29,8 @@ function handleRight(){
              "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
        </div>
             <div className="arrowleft" onClick={handleLeft}> arrow left</div>
-            <di className="arrowright" onClick={handleRight}> arrow right </di>
+            <div className="arrowright" onClick={handleRight}> arrow right </div>
+            <div className="restimage"></div>
             <div className="circle"> 
                 <div className="indicator"> a </div>
                 <div className="indicator"> b</div>
