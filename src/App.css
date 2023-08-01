@@ -4,6 +4,47 @@
 
 
 .homepage{
+  position: relative;
+  background-color: red;
   width:100vw;
-  height:100vw;
+  height:100vh;
+}
+
+.arrowleft{
+  position: absolute;
+  left: 0;
+  top:50%;
+}
+
+.arrowright{
+  position:absolute;
+  right: 0;
+  top:50%;
+
+}
+
+.homename{
+  background-color: aqua;
+  position: absolute;
+  left:50%;
+  top:20px;
+}
+
+.circle{
+  display: flex;
+  justify-content: space-between;
+  width: 45px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+}
+
+.homedescription{
+  width: 20%;
+  height: 10%;
+  background-color: azure;
+  position: absolute;
+  bottom: 200px;
+  right: 120px;
+
 }

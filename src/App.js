@@ -5,6 +5,7 @@ import './App.css';
 function App() {
 
   const [restaurant, setRestaurant]=useState([])
+  const [currentindex, setCurrentIndex]=useState(0)
 
   useEffect(()=>{
     fetch("https://my-json-server.typicode.com/Muchai248/Muchai-248-restaurant/db")
@@ -21,7 +22,7 @@ function App() {
   return (
     <>
     <div>
-      <LandingPage/>
+      <LandingPage currentindex={currentindex} setCurrentIndex={setCurrentIndex} restaurant={restaurant} />
     </div>
     </>
   );
