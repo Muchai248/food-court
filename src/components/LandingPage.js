@@ -3,16 +3,16 @@ import { BrowserRouter } from "react-router-dom"
 export default function LandingPage({restaurant, setRestaurant}){
 
     return(
-        <div>
+        <div className="homepage">
             <img/>
-            <div>name </div>
-             <div> Description</div>
-            <div> arrow left </div>
-            <di> arrow right </di>
+            <div className="homename">name</div>
+             <div className="homedescription"> Description</div>
+            <div className="arrowleft"> arrow left </div>
+            <di className="arrowright"> arrow right </di>
             <div> 
-                <div> a </div>
-                <div> b</div>
-                <div> c</div>
+                <div className="indicator"> a </div>
+                <div className="indicator"> b</div>
+                <div className="indicator"> c</div>
              </div>
             
         </div>
