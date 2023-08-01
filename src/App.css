@@ -182,3 +182,6 @@
   margin-top: 20px;
   font-weight: bolder;
 }
+.landingBackground{
+  filter: blur(4px);
+}
