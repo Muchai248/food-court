@@ -1,13 +1,16 @@
 import MenuCardItem from "./MenuItemCard";
 
-export default function Menu(){
+export default function Menu({currentindex, newdata}){
+    const currentRestaurant = newdata.current[currentindex]
     return (
         <div className="menu">
             <div className="leftSection">
                 <div className="imagedetswrapper">
-                    <div className="dishImage"></div>
+                    <div className="dishImage">
+                        <img src={currentRestaurant.image} width="100%" height="100%"/>
+                    </div>
                     <div className="foodDets">
-                        <div className="foodName">Name</div>
+                        <div className="foodName">{currentRestaurant.name}</div>
                         <div> <button>Order food</button> </div>
                     </div>
                 </div>
