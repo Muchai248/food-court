@@ -30,7 +30,7 @@ function handleRight(){
             <div className="arrowleft" onClick={handleLeft}> arrow left</div>
             <div className="arrowright" onClick={handleRight}> arrow right </div>
             <div className="restimage">
-                <img src={data.image} />
+                <img src={data.image} width="100%" height="100%" />
                 </div>
             <div className="circle">
                 <div className="indicator"></div>
