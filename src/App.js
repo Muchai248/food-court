@@ -18,7 +18,6 @@ function App() {
       newdata.current=data
       // console.log(data)
     })
-    
 
   },[])
 
