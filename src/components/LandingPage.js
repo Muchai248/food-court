@@ -4,23 +4,24 @@ import { BrowserRouter } from "react-router-dom"
 export default function LandingPage({restaurant, setRestaurant, currentindex,  setCurrentIndex, newdata}){
    const [data, setData]=useState([])
    const placeholder = newdata.current[0]
-    console.log(restaurant.restaurants)
+    // console.log(restaurant.restaurants)
     // setData(restaurant.restaurants[0])
 
 function handleLeft(){
     // console.log(restaurant)
-    const newData = restaurant.restaurants[0]
-    setData(newData)
     if(currentindex>0){
+        const newData = restaurant.restaurants[currentindex - 1]
+        setData(newData)
         setCurrentIndex(currentindex-1)
     }
 }
 
 function handleRight(){
-    if(currentindex<restaurant.length){
+    if(currentindex<restaurant.restaurants.length - 1){
+        const newData = restaurant.restaurants[currentindex + 1]
+        setData(newData)
         setCurrentIndex(currentindex+1)
     }
-    // console.log(currentindex)
 }
 
     return(
