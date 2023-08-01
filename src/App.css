@@ -39,7 +39,7 @@
 .circle{
   display: flex;
   justify-content: space-between;
-  width: 100px;
+  width: fit-content;
   position: absolute;
   bottom: 50px;
   left: 46%;
@@ -68,9 +68,10 @@
 }
 
 .indicator{
+  margin-right: 10px;
   width: 20px;
   height: 20px;
-  background-color: white;
+  /* background-color: white; */
   border-radius:50%;
 }
 .menu{
@@ -78,7 +79,6 @@
   justify-content: space-evenly;
   width: 95vw;
   height: 95vh;
-  background-color: aqua;
 }
 .leftSection{
   display: flex;
@@ -87,14 +87,12 @@
   align-items: center;
   width: 65%;
   height: 100%;
-  background-color: bisque;
 }
 .imagedetswrapper{
   display: flex;
   justify-content: space-evenly;
   height: 40%;
   width: 80%;
-  background-color: blanchedalmond;
 }
 .dishImage{
   border-radius: 50%;
@@ -105,7 +103,6 @@
 .foodDets{
   width: 50%;
   height: 100%;
-  background-color: yellow;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -117,15 +114,17 @@
   position: relative;
   height: 30%;
   width: 90%;
-  background-color: red;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 .filters{
   width: 70%;
   height: 10%;
   background-color: burlywood;
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .rightSection{
   display: flex;
@@ -133,11 +132,53 @@
   justify-content: center;
   width: 30%;
   height: 100%;
-  background-color: green;
 }
 .overview{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
   width: 90%;
   height: 80%;
   border-radius: 25px;
-  background-color: black;
+  background-color: aliceblue;
+}
+.menuSlideControlsleft{
+  position: absolute;
+  top: 50%;
+  left: 10px;
+}
+.menuSlideControlsright{
+  position: absolute;
+  top: 50%;
+  right: 10px;
+}
+.itemCard{
+  background-color: cadetblue;
+  height: 90%;
+  width: 20%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.foodPlate{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: purple;
+}
+.ItemName{
+  align-items: center;
+  width: 50%;
+  text-align: center;
+  background-color: antiquewhite;
+}
+.tabs{
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin-top: 20px;
+  font-weight: bolder;
 }

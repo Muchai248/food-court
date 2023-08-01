@@ -16,7 +16,7 @@ function App() {
     .then((r)=>r.json())
     .then((data)=>{
       setRestaurant(data)
-      newdata.current=data
+      newdata.current=data.restaurants
       // console.log(data)
     })
 
@@ -26,8 +26,8 @@ function App() {
   return (
     <>
     <div>
-      <LandingPage currentindex={currentindex} setCurrentIndex={setCurrentIndex} restaurant={restaurant}  newdata={newdata}/>
-      <Menu/>
+      { newdata.current ? <LandingPage currentindex={currentindex} setCurrentIndex={setCurrentIndex} restaurant={restaurant}  newdata={newdata}/> : <div>loading</div>}
+      {newdata.current ? <Menu/> : <div>loading</div>}
     </div>
     </>
   );
