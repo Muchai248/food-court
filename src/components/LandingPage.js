@@ -5,14 +5,14 @@ export default function LandingPage({restaurant, setRestaurant, currentindex,  s
    const [data, setData]=useState({...restaurant[0]})
     // console.log(restaurant.restaurants)
 
-    // console.log(newdata.current.restaurants)
+    console.log(newdata.current)
 
 function handleLeft(){
     // console.log(restaurant)
     if(currentindex>0){
      setCurrentIndex(currentindex-1)
     }
-    console.log(currentindex)
+    // console.log(currentindex)
 }
 
 function handleRight(){
