@@ -1,8 +1,8 @@
-export default function MenuCardItem(){
+export default function MenuCardItem({foodItem}){
     return (
         <div className="itemCard">
             <div className="foodPlate"></div>
-            <div className="ItemName">Ugali</div>
+            <div className="ItemName">{foodItem.food}</div>
         </div>
     )
 }

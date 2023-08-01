@@ -2,6 +2,9 @@ import MenuCardItem from "./MenuItemCard";
 
 export default function Menu({currentindex, newdata}){
     const currentRestaurant = newdata.current[currentindex]
+    const foods = currentRestaurant.food.map((foodItem, index)=>{
+        return(<MenuCardItem key={index} foodItem={foodItem}/>)
+    })
     return (
         <div className="menu">
             <div className="leftSection">
@@ -17,7 +20,7 @@ export default function Menu({currentindex, newdata}){
                 <div className="Menudisplay">
                     <div className="menuSlideControlsleft"> L </div>
                     <div className="menuSlideControlsright"> R </div>
-                    <MenuCardItem/>
+                    {foods}
                 </div>
                 <div className="filters">filters</div>
             </div>

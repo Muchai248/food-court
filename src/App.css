@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   position: relative;
-  background-color: red;
   width:100vw;
   height:100vh;
   overflow: hidden;
@@ -155,7 +154,7 @@
   right: 10px;
 }
 .itemCard{
-  background-color: cadetblue;
+  background-color: azure;
   height: 90%;
   width: 20%;
   border-radius: 20px;
@@ -168,13 +167,13 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: purple;
+  background-color: bisque;
 }
 .ItemName{
   align-items: center;
-  width: 50%;
+  max-width: 90%;
   text-align: center;
-  background-color: antiquewhite;
+  font-weight: bolder;
 }
 .tabs{
   display: flex;
