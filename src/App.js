@@ -8,17 +8,13 @@ function App() {
   const [currentindex, setCurrentIndex]=useState(0)
   const newdata=useRef()
 
-
-
   useEffect(()=>{
     fetch("https://my-json-server.typicode.com/Muchai248/Muchai-248-restaurant/db")
     .then((r)=>r.json())
     .then((data)=>{
+      newdata.current=data.restaurants[0]
       setRestaurant(data)
-      newdata.current=data
-      // console.log(data)
     })
-
   },[])
 
 
