@@ -1,6 +1,7 @@
 import LandingPage from './components/LandingPage';
 import { useEffect, useState, useRef} from 'react';
 import './App.css';
+import Menu from './components/Menu';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
     <>
     <div>
       <LandingPage currentindex={currentindex} setCurrentIndex={setCurrentIndex} restaurant={restaurant}  newdata={newdata}/>
+      <Menu/>
     </div>
     </>
   );
