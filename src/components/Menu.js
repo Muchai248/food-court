@@ -1,10 +1,20 @@
 import MenuCardItem from "./MenuItemCard";
 
-export default function Menu({currentindex, newdata}){
+export default function Menu({currentindex, newdata, restaurant}){
     const currentRestaurant = newdata.current[currentindex]
-    const foods = currentRestaurant.food.map((foodItem, index)=>{
-        return(<MenuCardItem key={index} foodItem={foodItem}/>)
+    const foods =restaurant.food.filter((foodItem, index)=>{
+
+        return(
+        foodItem["restaurant_id"] === currentindex
+        )
     })
+    
+
+    const newfoods=foods.map((Item, index)=>{
+        // console.log(foods)
+         return(<MenuCardItem key={index} foodItem={Item}/>)
+    })
+
     return (
         <div className="menu">
             <div className="leftSection">

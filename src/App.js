@@ -29,7 +29,7 @@ function App() {
     <>
     <div>
       { newdata.current && !changed ? <LandingPage currentindex={currentindex} setCurrentIndex={setCurrentIndex} restaurant={restaurant}  newdata={newdata} setChanged={setChanged}/> : <div></div>}
-      {newdata.current && changed ? <Menu currentindex={currentindex} newdata={newdata}/> : <div>loading</div>}
+      {newdata.current && changed ? <Menu currentindex={currentindex} newdata={newdata} restaurant={restaurant}/> : <div>loading</div> }
     </div>
     </>
   );
