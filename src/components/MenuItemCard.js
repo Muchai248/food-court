@@ -1,11 +1,9 @@
 
-export default function MenuCardItem({foodItem, setSelectedItem, list}){
+export default function MenuCardItem({foodItem, setSelectedItem, setUpdateData}){
 
     function handlecard(e){
-        console.log(foodItem)
-
+        setUpdateData(true)
         setSelectedItem(foodItem)
-        
     }
     return (
         <div className="itemCard" onClick={handlecard}>

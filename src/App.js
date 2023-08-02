@@ -2,7 +2,7 @@ import LandingPage from './components/LandingPage';
 import { useEffect, useState, useRef} from 'react';
 import './App.css';
 import Menu from './components/Menu';
-import { BrowserRouter as Router } from "react-router-dom"
+// import { BrowserRouter as Router } from "react-router-dom"
 
 function App() {
 
