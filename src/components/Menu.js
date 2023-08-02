@@ -42,6 +42,7 @@ export default function Menu({currentindex, newdata, restaurant, }){
 
     return (
         <div className="menu">
+            {/* <im src="src/assets/menu.jpg" className="photo"/> */}
             <div className="leftSection">
                 <div className="imagedetswrapper">
                     <div className="dishImage">
