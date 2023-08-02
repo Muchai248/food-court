@@ -10,6 +10,9 @@ function App() {
   const [currentindex, setCurrentIndex]=useState(0)
   const [changed, setChanged] = useState(false)
   const newdata=useRef()
+  
+
+  // console.log(newdata)
 
 
 
