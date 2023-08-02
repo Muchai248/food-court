@@ -2,18 +2,18 @@ import MenuCardItem from "./MenuItemCard";
 
 export default function Menu({currentindex, newdata, restaurant}){
     const currentRestaurant = newdata.current[currentindex]
-    const foods =restaurant.food.filter((foodItem, index)=>{
-
-        return(
-        foodItem["restaurant_id"] === currentindex
-        )
+    const foods =currentRestaurant.food.map((foodItem, index)=>{
+        return(<MenuCardItem key={index} foodItem={foodItem}/>)
+        // return(
+        // foodItem["restaurant_id"] === currentindex
+        // )
     })
     
 
-    const newfoods=foods.map((Item, index)=>{
-        // console.log(foods)
-         return(<MenuCardItem key={index} foodItem={Item}/>)
-    })
+    // const newfoods=foods.map((Item, index)=>{
+    //     // console.log(foods)
+    //      return(<MenuCardItem key={index} foodItem={Item}/>)
+    // })
 
     return (
         <div className="menu">
