@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import MenuCardItem from "./MenuItemCard";
 import OrderCard from "./OrderCard";
 import { PreviewInfo } from "./PreviewInfo";
+import Search from "./Search";
 
 export default function Menu({currentindex, newdata, restaurant, }){
     const currentRestaurant = newdata.current[currentindex]
     const [updateData, setUpdateData] = useState(false)
     const [selecteditem, setSelectedItem]=useState({})
     const [activeTab, setActiveTab]=useState('overview')
-    const [currentInd, setCurrentInd]=useState()
+    const [currentInd, setCurrentInd]=useState(0)
     const [ordersNumber, setOrdersNumber]=useState(0)
     const itemsPerPage = 4;
+    const fracture = useRef()
     const foods =currentRestaurant.food.map((foodItem, index)=>{
         return(<MenuCardItem key={index} foodItem={foodItem} setSelectedItem={setSelectedItem} setUpdateData={setUpdateData}/>)
     })
@@ -28,9 +30,6 @@ export default function Menu({currentindex, newdata, restaurant, }){
         })
     }
 
-    const cappedItems = foods.slice(currentInd, currentInd + itemsPerPage)
-    console.log(cappedItems)
-
     function handleorderlisting(){
         setOrders([...Orders, selecteditem])
         setOrdersNumber(Object.keys(Orders).length)
@@ -46,13 +45,14 @@ export default function Menu({currentindex, newdata, restaurant, }){
      function handlefilter(filter){
         let filtered=foods.filter((item)=>{return item.props.foodItem.category === filter})
         setFilterFoods(filtered)
-// console.log(filtered)
      }
 
      function handleAll(){
         setFilterFoods(foods)
      }
 
+    const cappedItems = filterfoods.slice(currentInd, currentInd + itemsPerPage)
+    fracture.current = cappedItems
 
     return (
         <div className="menu">
@@ -68,17 +68,19 @@ export default function Menu({currentindex, newdata, restaurant, }){
                 </div>
                 <div className="Menudisplay">
                     <button className="menuSlideControlsleft" onClick={showPreviousItems} disabled={currentInd<=0}> L </button>
-                    <button className="menuSlideControlsright" onClick={showNextItems} disabled={currentInd >= foods.length - itemsPerPage}> R </button>
-                    {filterfoods}
+                    <button className="menuSlideControlsright" onClick={showNextItems} disabled={currentInd > filterfoods.length-1}> R </button>
+                    {fracture.current}
                 </div>
-                <div className="filters"><button onClick={()=>{handlefilter("drinks")}}>Drinks</button>
-                                         <button onClick={()=>{handlefilter("salad")}}>salad</button>
-                                         <button onClick={()=>{handlefilter("vegeterian")}}>vegetables</button>
-                                         <button onClick={()=>{handlefilter("meat")}}>Steak</button>
-                                         <button onClick={handleAll}>All</button>
+                <div className="filters">
+                    <button onClick={()=>{handlefilter("drinks")}}>Drinks</button>
+                    <button onClick={()=>{handlefilter("salad")}}>salad</button>
+                    <button onClick={()=>{handlefilter("vegeterian")}}>vegetables</button>
+                    <button onClick={()=>{handlefilter("meat")}}>Steak</button>
+                    <button onClick={handleAll}>All</button>
                 </div>
             </div>
             <div className="rightSection">
+                <Search foods={foods} setFilterFoods={setFilterFoods}/>
                 <div className="overview">
                     <div className="tabs">
                         <div onClick={changeToOverview} style={{color: activeTab === 'overview' ? 'black':'grey'}}>Overview</div>
