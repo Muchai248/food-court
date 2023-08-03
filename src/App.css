@@ -204,10 +204,10 @@
 .ordersIndicator{
   position: absolute;
   display: none;
-  top: -30px;
+  top: -10px;
   right: -10px;
   font-weight: bolder;
-  font-size: 35px;
+  font-size: 15px;
   color: blue;
 }
 .orderDataWrapper{
@@ -287,4 +287,47 @@ button{
   color: black;
   padding: 5px 15px;
   font-weight: bolder;
+}
+.LockScreen{
+  height: 95vh;
+  width: 95vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.LockCenter{
+  overflow-y: auto;
+  position: relative;
+  width: 40%;
+  height: 100%;
+}
+.lockImage{
+  background-color: black;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px
+}
+.lockCard{
+  align-items: center;
+  margin-bottom: 25px;
+  width: 100%;
+  height: 100px;
+}
+.lockData{
+  width: 80%;
+  height: 100%;
+  background-color: aliceblue;
+  margin: 10px;
+}
+.bottommSheet{
+  position: absolute;
+  background-color: aqua;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  bottom: 0;
 }

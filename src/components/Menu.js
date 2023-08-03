@@ -9,6 +9,7 @@ export default function Menu({currentindex, newdata, restaurant, }){
     const [selecteditem, setSelectedItem]=useState({})
     const [activeTab, setActiveTab]=useState('overview')
     const [currentInd, setCurrentInd]=useState()
+    const [ordersNumber, setOrdersNumber]=useState(0)
     const itemsPerPage = 4;
     const foods =currentRestaurant.food.map((foodItem, index)=>{
         return(<MenuCardItem key={index} foodItem={foodItem} setSelectedItem={setSelectedItem} setUpdateData={setUpdateData}/>)
@@ -32,6 +33,7 @@ export default function Menu({currentindex, newdata, restaurant, }){
 
     function handleorderlisting(){
         setOrders([...Orders, selecteditem])
+        setOrdersNumber(Object.keys(Orders).length)
     }
     function changeToOrders(){
         setActiveTab('orders')
@@ -66,7 +68,7 @@ export default function Menu({currentindex, newdata, restaurant, }){
                         <div onClick={changeToOverview} style={{color: activeTab === 'overview' ? 'black':'grey'}}>Overview</div>
                         <div className="orderTab">
                             <div onClick={changeToOrders} style={{color: activeTab === 'orders' ? 'black':'grey'}}>Orders</div>
-                            <div className="ordersIndicator" style={{display: Object.keys(Orders).length > 0 ? "block" : "none"}}>.</div>
+                            <div className="ordersIndicator" style={{display: Object.keys(Orders).length > 0 ? "block" : "none"}}>{ordersNumber + 1}</div>
                         </div>
                     </div>
                     {activeTab !== 'overview' ? Orders.map((item, index) => (
