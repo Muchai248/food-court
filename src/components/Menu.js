@@ -39,10 +39,21 @@ export default function Menu({currentindex, newdata, restaurant, }){
     function changeToOverview(){
         setActiveTab('overview')
     }
+  
+    const[filterfoods, setFilterFoods]=useState([...foods])
+     function handlefilter(filter){
+        let filtered=foods.filter((item)=>{return item.props.foodItem.category === filter})
+        setFilterFoods(filtered)
+// console.log(filtered)
+     }
+
+     function handleAll(){
+        setFilterFoods(foods)
+     }
+
 
     return (
         <div className="menu">
-            {/* <img src="src/assets/menu.jpg" className="photo" alt=""/> */}
             <div className="leftSection">
                 <div className="imagedetswrapper">
                     <div className="dishImage">
@@ -56,9 +67,14 @@ export default function Menu({currentindex, newdata, restaurant, }){
                 <div className="Menudisplay">
                     <button className="menuSlideControlsleft" onClick={showPreviousItems} disabled={currentInd<=0}> L </button>
                     <button className="menuSlideControlsright" onClick={showNextItems} disabled={currentInd >= foods.length - itemsPerPage}> R </button>
-                    {foods}
+                    {filterfoods}
                 </div>
-                <div className="filters">filters</div>
+                <div className="filters"><button onClick={()=>{handlefilter("drinks")}}>Drinks</button>
+                                         <button onClick={()=>{handlefilter("salad")}}>salad</button>
+                                         <button onClick={()=>{handlefilter("vegeterian")}}>vegetables</button>
+                                         <button onClick={()=>{handlefilter("meat")}}>Steak</button>
+                                         <button onClick={handleAll}>All</button>
+                </div>
             </div>
             <div className="rightSection">
                 <div className="overview">
