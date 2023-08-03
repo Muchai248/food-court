@@ -2,6 +2,7 @@ import LandingPage from './components/LandingPage';
 import { useEffect, useState, useRef} from 'react';
 import './App.css';
 import Menu from './components/Menu';
+import Lock from './components/Lock';
 // import { BrowserRouter as Router } from "react-router-dom"
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
   const [currentindex, setCurrentIndex]=useState(0)
   const [changed, setChanged] = useState(false)
   const newdata=useRef()
-  
+  const list = [1,2,3,4,5]
 
   // console.log(newdata)
 
@@ -32,6 +33,7 @@ function App() {
     <div>
       { newdata.current && !changed ? <LandingPage currentindex={currentindex} setCurrentIndex={setCurrentIndex} restaurant={restaurant}  newdata={newdata} setChanged={setChanged}/> : <div></div>}
       {newdata.current && changed ? <Menu currentindex={currentindex} newdata={newdata} restaurant={restaurant}/> : <div>loading</div> }
+      <Lock list={list}/>
     </div>
     </>
   );
