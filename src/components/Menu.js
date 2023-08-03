@@ -88,7 +88,7 @@ export default function Menu({currentindex, newdata, restaurant, }){
                         </div>
                     </div>
                     {activeTab !== 'overview' ? Orders.map((item, index) => (
-                        <OrderCard key={index} item={item} setOrders={setOrders} orders={Orders}/>
+                        <OrderCard key={index} item={item} setOrders={setOrders} orders={Orders} setOrdersNumber={setOrdersNumber}/>
                     )) : <PreviewInfo updateData={updateData} currentRestaurant={currentRestaurant} selecteditem={selecteditem} />}
                     <button className="buttonReserve" style={{display: activeTab === 'orders' ? 'block':'none'}}>Reserve order</button>
                 </div>

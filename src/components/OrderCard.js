@@ -1,9 +1,10 @@
-export default function OrderCard({item, setOrders, orders}){
+export default function OrderCard({item, setOrders, orders, setOrdersNumber}){
     function removeOrder(){
         const activeOrders = orders.filter(orderItem => (
             item.food !== orderItem.food
         ));
         setOrders(activeOrders)
+        setOrdersNumber((previous)=>(previous-1))
     }
     return(
         <div className="orderCardWrapper" >
