@@ -167,6 +167,7 @@
   justify-content: space-evenly;
 }
 .foodPlate{
+  overflow: hidden;
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -218,6 +219,7 @@
   align-items: center;
 }
 .orderImage{
+  overflow: hidden;
   background-color: blue;
   width: 45px;
   height: 60px;
@@ -274,9 +276,15 @@
   border-radius: 50%;
   background-color: bisque;
 }
-
 .photo{
   width: 100%;
   height: 100%;
   position: absolute;
+}
+button{
+  border-radius: 10px;
+  border: 2px solid black;
+  color: black;
+  padding: 5px 15px;
+  font-weight: bolder;
 }

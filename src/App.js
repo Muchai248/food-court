@@ -22,7 +22,6 @@ function App() {
     .then((data)=>{
       setRestaurant(data)
       newdata.current=data.restaurants
-       console.log(newdata)
     })
 
   },[])

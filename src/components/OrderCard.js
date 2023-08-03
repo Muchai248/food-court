@@ -8,10 +8,12 @@ export default function OrderCard({item, setOrders, orders}){
     return(
         <div className="orderCardWrapper" >
             <div className="orderDataWrapper">
-                <div className="orderImage"></div>
+                <div className="orderImage">
+                    <img src={item.image} width="100%" height="100%" alt="" style={{objectFit: "cover"}}/>
+                </div>
                 <div className="orderData">
                     <div className="orderName">{item.food}</div>
-                    <div>{item.price}</div>
+                    <div>ksh: {item.price}</div>
                 </div>
             </div>
             <div  className="RemoveOrder" onClick={removeOrder}>

@@ -42,11 +42,11 @@ export default function Menu({currentindex, newdata, restaurant, }){
 
     return (
         <div className="menu">
-            {/* <im src="src/assets/menu.jpg" className="photo"/> */}
+            {/* <img src="src/assets/menu.jpg" className="photo" alt=""/> */}
             <div className="leftSection">
                 <div className="imagedetswrapper">
                     <div className="dishImage">
-                        {/* <img src={selecteditem === 'undefined' ? selecteditem.image: currentRestaurant.image} width="100%" height="100%"/> */}
+                        { <img src={updateData ? selecteditem.image: currentRestaurant.image} width="100%" height="100%" alt=""/> }
                     </div>
                     <div className="foodDets">
                         <div className="foodName">{updateData ? selecteditem.food : currentRestaurant.name}</div>
