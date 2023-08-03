@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/food-court/static/css/main.cc209500.css",
-    "main.js": "/food-court/static/js/main.19d75af8.js",
+    "main.css": "/food-court/static/css/main.68fab94a.css",
+    "main.js": "/food-court/static/js/main.89c2f2c5.js",
     "static/js/787.06d3b66a.chunk.js": "/food-court/static/js/787.06d3b66a.chunk.js",
     "index.html": "/food-court/index.html",
-    "main.cc209500.css.map": "/food-court/static/css/main.cc209500.css.map",
-    "main.19d75af8.js.map": "/food-court/static/js/main.19d75af8.js.map",
+    "main.68fab94a.css.map": "/food-court/static/css/main.68fab94a.css.map",
+    "main.89c2f2c5.js.map": "/food-court/static/js/main.89c2f2c5.js.map",
     "787.06d3b66a.chunk.js.map": "/food-court/static/js/787.06d3b66a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc209500.css",
-    "static/js/main.19d75af8.js"
+    "static/css/main.68fab94a.css",
+    "static/js/main.89c2f2c5.js"
   ]
 }
