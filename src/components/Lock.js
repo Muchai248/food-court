@@ -1,9 +1,26 @@
 import { useState } from "react"
 
-export default function Lock({Orders}){
+export default function Lock({Orders, newdata, currentindex}){
     const [selectedTable, setSelectedTable] = useState()
+    const configData ={ 
+        "id":1,
+         "restaurant_id":newdata.current[currentindex].restaurant_id,
+            "Table":selectedTable,
+            "food":Orders
+    }
+    
     function lockOrder(){
-        console.log(Orders)
+        // fetch("https://my-json-server.typicode.com/Muchai248/Muchai-248-restaurant/orders",{
+        //     method:"POST",
+        //     headers:{
+        //       'Content-Type':'application/json',
+        //       "Accept":"application/json"
+        //     },
+        //     body:JSON.stringify(configData)
+          window.alert(`Order Received ${selectedTable}`)
+        
+        
+        console.log(newdata.current[currentindex])
     }
     const cards = Orders.map((item, index)=>{
         return <div key={index} className="lockCard" style={{display: "flex", flexDirection: index % 2 === 0 ? 'row' : 'row-reverse'}}>
@@ -30,7 +47,9 @@ export default function Lock({Orders}){
             )}
         </div>
     })
-    function handleTableAssignment(){}
+    function handleTableAssignment(e){
+        setSelectedTable(e.target.value)
+    }
     return (
         <div className="LockScreen" style={{display: "flex", flexDirection: 'row'}}>
             <div className="LockCenter">

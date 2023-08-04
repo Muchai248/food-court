@@ -7,7 +7,7 @@ import Search from "./Search";
 import { Link} from "react-router-dom";
 // import Lock from "./Lock";
 
-export default function Menu({currentindex, newdata, restaurant, Orders, setOrders }){
+export default function Menu({currentindex, newdata, restaurant, Orders, setOrders , setRestaurantId}){
     const currentRestaurant = newdata.current[currentindex]
     const [updateData, setUpdateData] = useState(false)
     const [selecteditem, setSelectedItem]=useState({})
@@ -21,7 +21,7 @@ export default function Menu({currentindex, newdata, restaurant, Orders, setOrde
     })
 
     // const [Orders, setOrders]=useState([])
-
+     
     function showNextItems(){
         setCurrentInd((prevIndex)=>{
             return prevIndex + itemsPerPage
@@ -58,7 +58,8 @@ export default function Menu({currentindex, newdata, restaurant, Orders, setOrde
     fracture.current = cappedItems
 
     return (
-        <div className="menu">
+        <div className="menu" style={{backgroundImage: `url (src/assets/menu.jpg)`}}>
+            {/* <img  src="src/assets/menu.jpg" width="100%" height="100%" style={{position:"absolute"}}/> */}
             <div className="leftSection">
                 <div className="imagedetswrapper">
                     <div className="dishImage">

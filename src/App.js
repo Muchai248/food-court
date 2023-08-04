@@ -7,6 +7,7 @@ import {Route, Routes} from "react-router-dom"
 
 function App() {
 
+  const [restaurantId, setRestaurantId]=useState(0) 
   const [restaurant, setRestaurant]=useState([])
   const [currentindex, setCurrentIndex]=useState(0)
   const [changed, setChanged] = useState(false)
@@ -30,8 +31,8 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={ newdata.current && !changed ? <LandingPage currentindex={currentindex} setCurrentIndex={setCurrentIndex} restaurant={restaurant}  newdata={newdata} setChanged={setChanged}/> : <div></div>}></Route>
-        <Route path='/restaurant' element={newdata.current && changed ? <Menu currentindex={currentindex} newdata={newdata} restaurant={restaurant} Orders={Orders} setOrders={setOrders}/> : <div></div> }/>
-        <Route path='/restaurant/order' element={<Lock Orders={Orders}/>}/>
+        <Route path='/restaurant' element={newdata.current && changed ? <Menu currentindex={currentindex} newdata={newdata} restaurant={restaurant} Orders={Orders} setOrders={setOrders} setRestaurantId={setRestaurantId} /> : <div></div> }/>
+        <Route path='/restaurant/order' element={<Lock Orders={Orders} newdata={newdata} currentindex={currentindex} />}/>
       </Routes>
     </>
     // </Router>
