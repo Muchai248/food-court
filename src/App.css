@@ -141,6 +141,7 @@
 }
 .overview{
   position: relative;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -312,6 +313,7 @@ button{
   position: relative;
   width: 40%;
   height: 100%;
+  background-color: aliceblue;
 }
 .lockImage{
   overflow: hidden;
@@ -327,17 +329,20 @@ button{
   height: 100px;
 }
 .lockData{
-  width: 80%;
+  width: 30%;
   height: 100%;
   background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 10px;
 }
 .bottommSheet{
   position: absolute;
-  background-color: aqua;
+  background-color: cornsilk;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  height: 50px;
+  height: 80px;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -346,4 +351,17 @@ button{
 }
 .searchWrapper{
   width: 60%;
+}
+
+.foodie{
+  height: 85%;
+  width: 100%;
+  overflow-y: auto;
+ 
+}
+
+.fooders{
+  height: 90%;
+  width: 100%;
+  overflow: auto;
 }

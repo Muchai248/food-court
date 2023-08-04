@@ -1,6 +1,9 @@
 import { useState } from "react"
 
 export default function Lock({Orders, newdata, currentindex}){
+   const total=Orders.reduce((acc,current)=>{
+    return acc+parseInt(current.price);
+   })
     const [selectedTable, setSelectedTable] = useState()
     const configData ={ 
         "id":1,
@@ -30,8 +33,9 @@ export default function Lock({Orders, newdata, currentindex}){
                         <img src={item.image} alt="" style={{objectFit: "cover"}} width="100%" height="100%"/>
                     </div>
                     <div className="lockData">
-                        <div>{item.food}</div>
-                        <p>{item.description}</p>
+                        <div style={{fontWeight:"bold", fontSize:"1.5rem"}}>{item.food}</div>
+                        <div style={{fontStyle:"italic", fontSize:""}}>{item.category}</div>
+                        <div style={{fontWeight:"bold", fontSize:""}}>KSH: {item.price}</div>
                     </div>
                 </>
             ) : (
@@ -40,8 +44,9 @@ export default function Lock({Orders, newdata, currentindex}){
                         <img src={item.image} alt="" style={{objectFit: "cover"}} width="100%" height="100%"/>
                     </div>
                     <div className="lockData">
-                        <div>{item.food}</div>
-                        <p>{item.description}</p>
+                    <div style={{fontWeight:"bold", fontSize:"1.5rem"}}>{item.food}</div>
+                        <div style={{fontStyle:"italic", fontSize:""}}>{item.category}</div>
+                        <div style={{fontWeight:"bold", fontSize:""}}>KSH: {item.price}</div>
                     </div>
                 </>
             )}
@@ -53,9 +58,10 @@ export default function Lock({Orders, newdata, currentindex}){
     return (
         <div className="LockScreen" style={{display: "flex", flexDirection: 'row'}}>
             <div className="LockCenter">
-                {cards}
+                <div className="foodie">{cards}</div>
                 <div className="bottommSheet">
                 <div>
+                    {/* <div>{total}</div> */}
                     <input type="number" onChange={handleTableAssignment} value={selectedTable} placeholder="Enter table number"/>
                 </div>
                 <button onClick={lockOrder}>Lock Order</button>
