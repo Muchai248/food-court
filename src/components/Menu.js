@@ -3,8 +3,11 @@ import MenuCardItem from "./MenuItemCard";
 import OrderCard from "./OrderCard";
 import { PreviewInfo } from "./PreviewInfo";
 import Search from "./Search";
+// import Lock from './components/Lock';
+import { Link} from "react-router-dom";
+// import Lock from "./Lock";
 
-export default function Menu({currentindex, newdata, restaurant, }){
+export default function Menu({currentindex, newdata, restaurant, Orders, setOrders }){
     const currentRestaurant = newdata.current[currentindex]
     const [updateData, setUpdateData] = useState(false)
     const [selecteditem, setSelectedItem]=useState({})
@@ -17,7 +20,7 @@ export default function Menu({currentindex, newdata, restaurant, }){
         return(<MenuCardItem key={index} foodItem={foodItem} setSelectedItem={setSelectedItem} setUpdateData={setUpdateData}/>)
     })
 
-    const [Orders, setOrders]=useState([])
+    // const [Orders, setOrders]=useState([])
 
     function showNextItems(){
         setCurrentInd((prevIndex)=>{
@@ -92,7 +95,10 @@ export default function Menu({currentindex, newdata, restaurant, }){
                     {activeTab !== 'overview' ? Orders.map((item, index) => (
                         <OrderCard key={index} item={item} setOrders={setOrders} orders={Orders} setOrdersNumber={setOrdersNumber}/>
                     )) : <PreviewInfo updateData={updateData} currentRestaurant={currentRestaurant} selecteditem={selecteditem} />}
-                    <button className="buttonReserve" style={{display: activeTab === 'orders' ? 'block':'none'}}>Reserve order</button>
+                    <Link to={`/restaurant/order`}>
+                        <button className="buttonReserve" style={{display: activeTab === 'orders' ? 'block':'none'}}>Reserve order</button>
+                    </Link>
+                    {/* <Link to={/order}><button className="buttonReserve" style={{display: activeTab === 'orders' ? 'block':'none'}}>Reserve order</button></Link> */}
                 </div>
             </div>
         </div>

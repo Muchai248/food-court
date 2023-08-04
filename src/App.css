@@ -303,7 +303,8 @@ button{
   height: 100%;
 }
 .lockImage{
-  background-color: black;
+  overflow: hidden;
+  background-color: aliceblue;
   border-radius: 50%;
   height: 80px;
   width: 80px

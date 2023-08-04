@@ -3,7 +3,7 @@ import { useEffect, useState, useRef} from 'react';
 import './App.css';
 import Menu from './components/Menu';
 import Lock from './components/Lock';
-// import { BrowserRouter as Router } from "react-router-dom"
+import {Route, Routes} from "react-router-dom"
 
 function App() {
 
@@ -11,10 +11,7 @@ function App() {
   const [currentindex, setCurrentIndex]=useState(0)
   const [changed, setChanged] = useState(false)
   const newdata=useRef()
-  const list = [1,2,3,4,5]
-
-  // console.log(newdata)
-
+  const [Orders, setOrders]=useState([])
 
 
   useEffect(()=>{
@@ -29,13 +26,22 @@ function App() {
 
 
   return (
+    // <Router>
     <>
-    <div>
-      { newdata.current && !changed ? <LandingPage currentindex={currentindex} setCurrentIndex={setCurrentIndex} restaurant={restaurant}  newdata={newdata} setChanged={setChanged}/> : <div></div>}
-      {newdata.current && changed ? <Menu currentindex={currentindex} newdata={newdata} restaurant={restaurant}/> : <div></div> }
-      {newdata.current && changed ? <Lock list={list}/>:""}
-    </div>
+      <Routes>
+        <Route path='/' element={ newdata.current && !changed ? <LandingPage currentindex={currentindex} setCurrentIndex={setCurrentIndex} restaurant={restaurant}  newdata={newdata} setChanged={setChanged}/> : <div></div>}></Route>
+        <Route path='/restaurant' element={newdata.current && changed ? <Menu currentindex={currentindex} newdata={newdata} restaurant={restaurant} Orders={Orders} setOrders={setOrders}/> : <div></div> }/>
+        <Route path='/restaurant/order' element={<Lock Orders={Orders}/>}/>
+      </Routes>
     </>
+    // </Router>
+    // <>
+    // <div>
+    //   {/* { newdata.current && !changed ? <LandingPage currentindex={currentindex} setCurrentIndex={setCurrentIndex} restaurant={restaurant}  newdata={newdata} setChanged={setChanged}/> : <div></div>}
+    //   {newdata.current && changed ? <Menu currentindex={currentindex} newdata={newdata} restaurant={restaurant}/> : <div></div> }
+    //   {newdata.current && changed ? <Lock list={list}/>:""} */}
+    // </div>
+    // </>
   );
 }
 
