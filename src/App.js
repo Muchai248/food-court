@@ -30,7 +30,7 @@ function App() {
     // <Router>
     <>
       <Routes>
-        <Route path='/' element={ newdata.current && !changed ? <LandingPage currentindex={currentindex} setCurrentIndex={setCurrentIndex} restaurant={restaurant}  newdata={newdata} setChanged={setChanged}/> : <div></div>}></Route>
+        <Route path='/*' element={ newdata.current && !changed ? <LandingPage currentindex={currentindex} setCurrentIndex={setCurrentIndex} restaurant={restaurant}  newdata={newdata} setChanged={setChanged}/> : <div></div>}></Route>
         <Route path='/restaurant' element={newdata.current && changed ? <Menu currentindex={currentindex} newdata={newdata} restaurant={restaurant} Orders={Orders} setOrders={setOrders} setRestaurantId={setRestaurantId} /> : <div></div> }/>
         <Route path='/restaurant/order' element={<Lock Orders={Orders} newdata={newdata} currentindex={currentindex} />}/>
       </Routes>

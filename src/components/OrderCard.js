@@ -18,7 +18,7 @@ export default function OrderCard({item, setOrders, orders, setOrdersNumber}){
                 </div>
             </div>
             <div  className="RemoveOrder" onClick={removeOrder}>
-                D
+                X
             </div>
         </div>
     )
